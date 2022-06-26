@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr" xml:lang="fr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/photographer.css" rel="stylesheet" type="text/css" />
+    <link href="css/tablette_photographers.css" rel="stylesheet" type="text/css"/> 
+    <link href="css/mobile_photographers.css" rel="stylesheet" type="text/css"/>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    
+     
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/307c15301f.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/07ddc2ce99.js" crossorigin="anonymous"></script>
+    <title>Fisheye - photographe </title>
+  </head>
+  <body>
+    <header>
+      <h1><a href="index.html" aria-label="homepage"><img src="assets/images/logo.png" class="logo"  id="logo" alt="logo principal fishaye" role="img"/></a></h1>      
+    </header>
+    <main id="main" role="main">
+      <div class="photograph-header">
+      </div>
+      <div class="form_trie">
+          <p>Trier par</p>
+          <!-- construction d'un select only via div - start -->
+          <div class="select">  
+            <a href="#" class="select_link"><div class="select-styled"><span id="text-popularite">Popularité</span></div></a>
+              <nav role="navigation"> 
+                <ul class="select-options" style="display: none;">
+                  <a href="#"><li rel="popularite">Popularité</li></a>
+                  <a href="#"><li rel="date">Date</li></a>
+                  <a href="#"><li rel="titre">Titre</li></a>
+                </ul>
+              </nav>
+            </div>
+          </div>
+           
+        <section class="media"></section>
+      
+      <div class="rectangle_media">
+        <div class="total_likes">0</div>
+        <div><em class="fas fa-heart" id="icon_heart"></em></div>
+        <div class="total_prix">0&#8364 / jour</div>
+      </div>
+    </main>
+
+    <div id="contact_modal" aria-label="Modale">
+			<div class="modal">
+				<header class="modal_titre">         
+        </header>
+				<form name="reserve" action="index.html"  method="post" id="formulaire" >
+                  
+					<div class="formData" data-error="Veuillez indiquer votre prénom dans ce champ" id="form-data-first-name">
+						<label for="first_name">Prénom</label>
+            <input class="text-control" type="text" id="first_name" name="first_name"  placeholder="Prénom"
+            />
+          </div>
+          <div class="formData" data-error="Veuillez indiquer votre nom dans ce champ" id="form-data-last-name">  
+            <label for="last_name">Nom</label>
+            <input type="text" name="last_name" id="last_name" class="text-control" placeholder="Nom"
+            />
+          </div>
+          <div class="formData" data-error="Veuillez indiquer votre adresse e-mail" id="form-data-email">  
+            <label for="email">E-mail</label>
+            <input type="email" name="email" id="email" class="text-control" placeholder="E-mail"/> 
+          </div>
+          <div class="formData" data-error="Veuillez saisir votre message" id="form-data-message">                
+            <label for="message">Votre message</label>
+            <textarea type="text" name="message" id="message" class="text-control" placeholder="Votre message"></textarea>
+          </div>
+          <button type="submit" class="contact_button" id="contact_button" role="button">Envoyer </button>
+				</form>
+			</div>
+		</div>
+  <div id="parent_lightbox_modal" role="modale">
+      <div id="lightbox_modal">
+        <div class="lightboxmodal">       
+          <div class="media_lightbox"></div>
+          <div id="closeLightBoxModal"><ion-icon name="close-outline" onclick="closeLightBoxModal()"></ion-icon></div>
+        </div>
+      </div>
+    </div>    
+    <!-- Utils -->
+    <script src="scripts/utils/contactForm.js"></script>
+    <script src="scripts/utils/select.js"></script> 
+    <script src="scripts/utils/likes.js"></script>
+    <script src="scripts/utils/lightbox_modal.js"></script>
+    <!-- Factories-->
+    <script src="scripts/factories/photographer.js"></script>
+    <script src="scripts/factories/media.js"></script>
+    <!-- Main -->
+    <script src="scripts/pages/photographer.js"></script>
+
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  </body>
+</html>

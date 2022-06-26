@@ -1,0 +1,29 @@
+function mediaFactory(data, type) {
+
+    if(type == 'photograph'){ // photograph
+        const { name, id, city, country, tagline, price, portrait } = data;
+
+        function getUserCardDOM() {
+                const el = document.createElement( 'article' );
+                // html
+                let html = `<h2>${name}</h2>`
+                el.innerHTML = html;           
+                return (el);
+        }
+
+    }else{ // media
+        const { id, photographerId, title, image, video, likes, date, price } = data;
+
+        function getUserCardDOM() {
+            const el = document.createElement( 'header' );
+            // html
+            let html = `<h2>${title}</h2>`
+            el.innerHTML = html;           
+            return (el);
+        }
+    }
+
+    // const picture = `assets/photographers/${portrait}`;
+
+    return { getUserCardDOM }
+}
