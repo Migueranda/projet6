@@ -6,8 +6,7 @@ async function getPhotographer(id_photographer) {
     .then((Response) => Response.json())
     .then(data => {
       data.photographers = data.photographers.filter(photographer => photographer.id == id_photographer)
-      data.media = data.media.filter(media => media.photographerId == id_photographer)
-        // console.log(data.photographers)            
+      data.media = data.media.filter(media => media.photographerId == id_photographer)           
         return data
     })
     .catch(error => console.log(error));        
@@ -93,7 +92,6 @@ async function init(sort) {
     // gestion pop up modal light box      
     lightBoxModal(global_media);
     setModalContent(photographers);
-    //______________________
     // changeSlide(sens);
     // global_media = media2   
     console.log(global_media.length);
@@ -103,14 +101,3 @@ var global_media = null
 
 // première exécution
 init("popularite"); // tri par defaut directement au premier affichage
-
-// gestion du click "Trier par" > choix de l'utilisateur pour le tri des media - start
-// const selectCategorieMedia = document.getElementById('select_media');
-// const optionsSelect = document.querySelectorAll('ul.select-options > li');
-
-// optionsSelect.addEventListener("change", function(event){ 
-//     // transmission du choix utilisateur pour que l'affichage prenne en compte le tri
-//     init(event.target.value); 
-//     console.log(event.target.value);  
-// });
-// gestion du click "Trier par" > choix de l'utilisateur pour le tri des media - stop

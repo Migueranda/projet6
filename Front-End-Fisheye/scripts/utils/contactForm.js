@@ -1,24 +1,19 @@
 function displayModal() {
+  //ouverture de la modal
     const modal = document.getElementById("contact_modal");
     modal.style.display = "block";    
 }
 
 function closeModal() {
+  //fermerture de la modal
     const modal = document.getElementById("contact_modal");
     modal.style.display = "none";
 }
 
-// window.onclick = function(event) {
-//     if (displayModal.event.target == modal) {
-//       modal.style.display = "none";
-//     }
-//   }
-
 function setModalContent(photographers){
     const titre_Modal = document.querySelector('.modal_titre'); 
-    console.log("------------")
-    // console.log(photographers)
     let mediaModal = '';
+    // generation du titre de la modal, le nom du photographe et l'icone pour le fermer 
     let html = mediaModal +  `
    <div class="header_content-modal">
         <h1 id="contactez-moi">Contactez-moi</h1>
@@ -30,7 +25,6 @@ function setModalContent(photographers){
  //Seclection des elements du champ input
 const formSubmit = document.getElementById('formulaire');
 const contactModal = document.getElementById('contact_modal');
-
 const eltFirstName = document.getElementById('first_name');
 const eltLastName = document.getElementById('last_name');
 const eltEmail = document.getElementById('email');
@@ -43,11 +37,9 @@ const formLastName = document.getElementById('form-data-last-name');
 const fomEmail = document.getElementById('form-data-email'); 
 const formMessage = document.getElementById('form-data-message')
 
-// _________________Function__________________
 function validateModal(name){
   const messageErreurSubmit = document.querySelectorAll("[data-error-visible='true']");
   messageErreurSubmit.textContent = 'Merci ' + name  + ' ! Votre réservation a été reçue ';
-  // messageErreurSubmit.style.display = "block"; //rend visible le message
   contactModal.style.display = "none";  
 }
  //_____________AFFiCHAGE DE MESSAGE D'ERREUR__________________
@@ -81,17 +73,13 @@ if(eltMessage.value.length == 0){
   formMessage.setAttribute("data-error-visible", "false");
 }
 
-//_________________
-
 const messageErreurSubmit = document.querySelectorAll("[data-error-visible='true']");
-if (messageErreurSubmit.length > 0){ 
-
-  console.log("formulaire incomplet")   
+if (messageErreurSubmit.length > 0){ //verification d'erreur avant validation modal
+ 
   }else{  
-    // formSubmit.target.value;
     
   validateModal(event) 
-  console.log("event");
+    //afichage de donée du formulaire dans la console
   console.log(`info formulaire contact-moi : ${event.target[0].value}, ${event.target[1].value}, ${event.target[2].value},
    ${event.target[3].value}`)
   } 

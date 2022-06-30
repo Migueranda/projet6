@@ -1,28 +1,25 @@
 function lightBoxModal(media){
 
     const lightBoxElts = document.querySelectorAll('.lightbox_select'); // selection des images media (img & video)
-    // const picture = `assets/photographers/${portrait} `;
     lightBoxElts.forEach((lightBoxElt, index) => {  
         lightBoxElt.addEventListener('click', function(event){ // evenement type click pour afficher modal au click de l'image
-            console.log("coucou");
             displayLightBoxModal();
-            displayMediaLightBox(index);
+            displayMediaLightBox(index);           
         });
 
         lightBoxElt.addEventListener('touchstart', function(event){ // evenement type click pour afficher modal au click de l'image
             console.log("coucou2");
             displayLightBoxModal();
-            displayMediaLightBox(index);
+            displayMediaLightBox(index);           
         });
     });  
-    
-    
 }
 
 // function pour mutualiser les code affichage des chevrons et media dans la lightbox
+
 function displayMediaLightBox(index){
-    let lightBoxMedia = document.querySelector('div.media_lightbox'); 
-  
+
+    let lightBoxMedia = document.querySelector('div.media_lightbox');   
            
     let multimedia = '';
 
@@ -52,22 +49,42 @@ function displayMediaLightBox(index){
                                 <span class="chevron-right" id="suivant" onclick="changeSlide(${index_suivant})">
                                 <i class="fa-solid fa-chevron-right"></i></span>
                                 </div>`
-     if(index_suivant == global_media.length ){               
-        //  index_suivant = index;         
+                                
+     if(index_suivant == global_media.length ){                      
         chevron_suivant_html = ''
      }
      
      let html = multimedia + chevron_prec_html + chevron_suivant_html + `
      <h3 class="light_box-titre_media">${global_media[index].title}</h3>`
      lightBoxMedia.innerHTML = html; 
+     
 }
 
+document.addEventListener('keydown', (event)=>{
+    const keyName = event.key
+    // appui sur touche fléchée gauche
+    if (keyName === 'ArrowLeft') {
+        let chevront_gauche = document.getElementById('precedent');
+        chevront_gauche.click();
+        return;
+        }
+    // appui sur touche fléchée droite
+    if (keyName == 'ArrowRight') {
+        let chevron_droit = document.getElementById('suivant');
+        chevron_droit.click();  
+        return; 
+        }
+    // appui sur "echap"
+    if(keyName == 'Escape'){
+        closeLightBoxModal();
+        return;
+    }
+});
 
 // affichage de la modal lightbox
 function displayLightBoxModal() {
     const modal = document.getElementById("parent_lightbox_modal");   
-	modal.style.display = "block";    
-    // backgroundLightBoxModal.style.display = "block";     
+	modal.style.display = "block";       
 }
 
 // fermeture de la modal
@@ -75,9 +92,9 @@ function closeLightBoxModal() {
     const modal = document.getElementById("parent_lightbox_modal");      
     modal.style.display = "none";   
 }
-
+//light box modal
 function changeSlide(index){
     displayMediaLightBox(index);   
-    console.log(global_media)    
+      
 }
 

@@ -1,9 +1,5 @@
-function likes(){    
-    let iconsHeart = document.querySelectorAll('ion-icon[name="heart"]'); 
-    // ______________________________________
-    // let likeIconMedia = document.querySelector('div.like_icon-media').previousElementSibling;
-    // console.log(likeIconMedia)   
-    // ______________________________________
+function likes(){
+    let iconsHeart = document.querySelectorAll('ion-icon[name="heart"]');
 
     iconsHeart.forEach((iconHeart) => { // boucle pour selectionner chaque icon
         console.log(iconHeart)    
@@ -12,14 +8,13 @@ function likes(){
     const eltSiblingLike = iconHeart.parentElement.previousElementSibling; //selection de l'element parent
     const total_likes = document.querySelector('div.total_likes');
 
-
     if(iconHeart.classList.toggle('active')){
-        console.log('active!!')
+        //incrementation des likes au click
         eltSiblingLike.textContent++;
         total_likes.textContent++;
 
     }else{
-        console.log('pas active!!')
+        //desincrementation des likes au click
         eltSiblingLike.textContent--;
         total_likes.textContent--;
     }

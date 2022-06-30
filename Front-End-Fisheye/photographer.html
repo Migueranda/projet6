@@ -5,8 +5,7 @@
     <link href="css/photographer.css" rel="stylesheet" type="text/css" />
     <link href="css/tablette_photographers.css" rel="stylesheet" type="text/css"/> 
     <link href="css/mobile_photographers.css" rel="stylesheet" type="text/css"/>
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
-    
+    <link href="css/style.css" rel="stylesheet" type="text/css" />   
      
     <meta charset="utf-8" />
     <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -20,8 +19,7 @@
       <h1><a href="index.html" aria-label="homepage"><img src="assets/images/logo.png" class="logo"  id="logo" alt="logo principal fishaye" role="img"/></a></h1>      
     </header>
     <main id="main" role="main">
-      <div class="photograph-header">
-      </div>
+      <div class="photograph-header"></div>      
       <div class="form_trie">
           <p>Trier par</p>
           <!-- construction d'un select only via div - start -->
@@ -35,23 +33,20 @@
                 </ul>
               </nav>
             </div>
-          </div>
-           
-        <section class="media"></section>
-      
+          </div>           
+        <section class="media"></section>   
+           <!--Rectangle affichage fixed fixed-->
       <div class="rectangle_media">
         <div class="total_likes">0</div>
         <div><em class="fas fa-heart" id="icon_heart"></em></div>
         <div class="total_prix">0&#8364 / jour</div>
       </div>
     </main>
-
     <div id="contact_modal" aria-label="Modale">
 			<div class="modal">
 				<header class="modal_titre">         
         </header>
-				<form name="reserve" action="index.html"  method="post" id="formulaire" >
-                  
+				<form name="reserve" action="index.html"  method="post" id="formulaire" >                  
 					<div class="formData" data-error="Veuillez indiquer votre prénom dans ce champ" id="form-data-first-name">
 						<label for="first_name">Prénom</label>
             <input class="text-control" type="text" id="first_name" name="first_name"  placeholder="Prénom"
@@ -78,7 +73,8 @@
       <div id="lightbox_modal">
         <div class="lightboxmodal">       
           <div class="media_lightbox"></div>
-          <div id="closeLightBoxModal"><ion-icon name="close-outline" onclick="closeLightBoxModal()"></ion-icon></div>
+          <div id="closeLightBoxModal"><ion-icon name="close-outline" onclick="closeLightBoxModal()">
+          </ion-icon></div>
         </div>
       </div>
     </div>    
@@ -92,10 +88,8 @@
     <script src="scripts/factories/media.js"></script>
     <!-- Main -->
     <script src="scripts/pages/photographer.js"></script>
-
     <!-- Ionicons -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
   </body>
 </html>

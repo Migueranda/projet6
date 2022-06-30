@@ -1,11 +1,13 @@
 @media screen and (min-width: 481px) and (max-width: 1023px){
     header{
-        margin-right: 30px;
+        margin-bottom: 30px !important;    
     }
+
     #logo{
         height: 50px;
-        margin-left: 30px;
+        margin-left: 0px;
     }
+
     #contact_modal {
         display: none;
         right: 0px;
@@ -59,7 +61,6 @@
     .modal header {
         justify-content: space-between;
         width:100%;
-        margin-top: 20%;
     }
 
     .modal header img {
@@ -70,13 +71,11 @@
         margin: 0px;
         font-size: 36px;
         font-weight: normal;
-        text-align: center;
-        font-size: 0px;
         font-weight: inherit;
         padding-right: 0px;
-        white-space: nowrap;
-        
+        white-space: nowrap;        
     }
+
     .titre_modal-name{
         margin-top: 0px;
         font-size: 30px;
@@ -99,7 +98,6 @@
         height: 20px;
         white-space: nowrap;
         font-size: 30px;  
-        margin-left: 10px; 
     }
 
     form label {
@@ -135,7 +133,7 @@
         border: 0.8px solid #ccc;    
         height: 120px;   
     }
-    /* _______________________ */
+
     .text-control{
         margin: 0;
         padding: 10px;
@@ -177,7 +175,6 @@
         color: red;
     }
         
-    /* _______________________ */
     #closemodal{
         cursor: pointer;
         font-weight: bold;
@@ -189,7 +186,7 @@
         bottom: 40px; 
     }
 
-    /* _______________photographer________________________ */
+    /* __photographer__ */
     article{
         display: flex;    
         justify-content: space-between;
@@ -228,7 +225,7 @@
         border-radius: 50%;
         height: 130px;       
     }
-    /*______________________media________________________________*/
+    /*__media___*/
     img.media{
         width:100%; 
         height:400px;  
@@ -251,6 +248,13 @@
         background-color: #901C1C;
         border-radius: 5px;  
         object-fit: cover;  
+    }
+
+    #button_play{
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 5px;
     }
 
     .titre_media{
@@ -345,7 +349,7 @@
 
     #text-popularite{    
         margin-left: 13px;   
-        color: #fff;   
+        color: #fff;          
     }
 
     .select_link:after{
@@ -400,6 +404,7 @@
         margin-left: 15px;   
         color: #fff;   
     }
+
     .select-options li:nth-child(2) {
         border-bottom:none;    
     }
@@ -435,6 +440,12 @@
         font-weight: bold;   
     }
 
+    nav.button_text-content{
+        visibility: hidden;
+        width: 10px;
+        font-size: 6px;
+    }  
+
     .total_likes{   
         margin-top: 10px; 
         margin-left: 20px;
@@ -443,7 +454,7 @@
         margin-top: 10px;
         margin-left: 50px;
     }
-    /* ionicos ___________________*/
+    /* ionicos */
     .like_icon-media{   
         font-size:16px;
         Width:17.5px;
@@ -468,12 +479,6 @@
         stroke-width:30;   
         transition:all 0.5s;
     } 
-    
-    /* @-webkit-keyframes like {
-        0%   { transform: scale(1); }
-        90%   { transform: scale(1.2); }
-        100% { transform: scale(1.1); }
-    } */
 
     /* ____________LIGHT-BOX-MODAL_______________ */
     #parent_lightbox_modal{ 
@@ -566,11 +571,5 @@
         padding-bottom: 5em;
         margin: 10px;
         margin-left: 0;
-    }
-
-    nav.buttom_text-content{
-        visibility: hidden;
-        width: 10px;
-        font-size: 6px;
-    }
+    }   
 }
