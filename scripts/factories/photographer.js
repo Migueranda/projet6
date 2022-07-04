@@ -7,7 +7,6 @@ function photographerFactory(data) {
     function getUserCardDOM() {
        
         const article = document.createElement( 'article' );  
-           //http://127.0.0.1:5500/Front-End-Fisheye/?id=930
  
         let html = `<a href="photographer.html?id=${id}">
                         <img src="${picture}" alt="${name}"/>
