@@ -5,6 +5,7 @@ async function getPhotographer(id_photographer) {
     const data = await fetch(urljson) //ajout await  au fetch pour attendre que la promesse s'execute
     .then((Response) => Response.json())
     .then(data => {
+        // on filtre les donnée en fonction de l'id du photographe
       data.photographers = data.photographers.filter(photographer => photographer.id == id_photographer)
       data.media = data.media.filter(media => media.photographerId == id_photographer)           
         return data
@@ -17,27 +18,29 @@ async function getPhotographer(id_photographer) {
 async function displayData(photographers, media) {
     // Affichage du Photographe
     const photographHeader = document.querySelector(".photograph-header"); 
-    // remove child nodes
+    // suppression de la carte précédente (si présence)
     if (photographHeader.hasChildNodes()) {
         while(photographHeader.firstChild) photographHeader.removeChild(photographHeader.firstChild)
     }
-    
+    // génération de la carte photographe via la media factory
     photographers.forEach((photographer) => {        
-        const photographerModel = mediaFactory(photographer, "potographer");        
+        const photographerModel = mediaFactory(photographer, "photographer");        
         const userCardDOM = photographerModel.getUserCardDOM();
+        // ajoute la carte au conteneur html
         photographHeader.appendChild(userCardDOM);
     });
 
-    // Affichaga des media du photographe
+    // Affichage des media du photographe
     const mediaSection = document.querySelector(".media");
-    // remove child nodes
+    // suppression de des cartes précédentes (si présence)
     if (mediaSection.hasChildNodes()) {
         while(mediaSection.firstChild) mediaSection.removeChild(mediaSection.firstChild)
     }
-
+    // génération de la carte media via la media factory
     media.forEach((media) => {
         const mediaModel = mediaFactory(media, "media");
         const userCardDOM = mediaModel.getUserCardDOM();
+        // ajoute la carte au conteneur html
         mediaSection.appendChild(userCardDOM);
     })
 

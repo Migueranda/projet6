@@ -1,5 +1,5 @@
 function mediaFactory(data, type){
-   if(type == "media"){
+   if(type == "media"){//gernere les media
     const {id, photographerId, title, video, image, likes, date, price} = data; 
     const icons_media = `assets/icons/close.svg`; 
 
@@ -21,7 +21,7 @@ function mediaFactory(data, type){
                                 <div class="media_cont_like-heart">
                                     <h4 class="nbr_likes">${likes}</h4>
                                       <button name="heart" class='like_icon-media'>  
-                                        <ion-icon name="heart">
+                                        <ion-icon name="heart" aria-label="icon like">
                                         <nav  class="button_text-content"> ajouter aux favoris</nav>
                                         <div class='red-bg'></div>
                                         </ion-icon>                                       
@@ -31,10 +31,10 @@ function mediaFactory(data, type){
 
     section.innerHTML = html;
     return (section);
-}
+    }
     return { getUserCardDOM }
 
-}else{
+}else{ //Genere la carte photographe dans la page du photographe
     const { name, portrait, country, city, tagline, price, id} = data;
     
     const picture = `assets/photographers/${portrait}`;
@@ -57,7 +57,6 @@ function mediaFactory(data, type){
     }    
     return { name, picture, getUserCardDOM }
        
-    } 
-   
+    }   
 }
 
