@@ -9,11 +9,9 @@ optionsSelect = document.querySelectorAll('ul.select-options > a > li')
 
 // gestion affichage dropdown listbox
 styledSelect.addEventListener('click', function(event){
-    console.log("click styledSelect")
     event.preventDefault()
     event.stopPropagation();
     if (listSelect.style.display == 'none'){ // on affichage
-        console.log("list block")
         listSelect.style.display = 'block';
         styledSelect.classList.add("active");
         // on cache l'option qui est déjà selectionnée
@@ -27,7 +25,6 @@ styledSelect.addEventListener('click', function(event){
         })
     } else { // on cache
         listSelect.style.display = 'none';
-        console.log("list none")
         styledSelect.classList.remove("active");
     }   
 })

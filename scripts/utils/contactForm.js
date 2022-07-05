@@ -1,8 +1,19 @@
 function displayModal() {
   //ouverture de la modal
     const modal = document.getElementById("contact_modal");
-    modal.style.display = "block";    
+    const first_name = document.getElementById("first_name");
+    modal.style.display = "block"; 
+    first_name.focus();
+    // openModal();       
 }
+document.addEventListener('keydown', (event)=>{
+  const keyName = event.key
+  if(keyName == 'Escape'){
+    closeModal  ();
+      return;
+  }
+});
+
 
 function closeModal() {
   //fermerture de la modal
@@ -19,7 +30,10 @@ function setModalContent(photographers){
         <h1 id="contactez-moi">Contactez-moi</h1>
         <h2 class="titre_modal-name">${photographers[0].name}</h2>
    </div> 
-    <div id="closemodal"><ion-icon name="close-outline" onclick="closeModal()"></ion-icon></div>`      
+    
+    <button id="closemodal"><i title="fermer" role="bouton fermer" class="fa-solid fa-xmark" onclick="closeModal()"></i></button>
+    `      
+    // <button id="closemodal"><ion-icon ariaLabel="fermer" name="close-outline"  onclick="closeModal()"></ion-icon></button>
     titre_Modal.innerHTML = html;
 }
  //Seclection des elements du champ input

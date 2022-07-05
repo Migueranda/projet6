@@ -22,4 +22,12 @@ function likes(){
         })
     })
 
+    document.addEventListener('keypress', (event)=>{
+        const keyName = event.key
+        if(keyName == 'Enter'){
+            likes();
+            return;
+        }
+      });
+
 }
