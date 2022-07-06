@@ -60,7 +60,7 @@ async function displayData(photographers, media) {
     console.log(somme);
 };
 
-function mediaSort(data, sort){
+function mediaSort(data, sort){//liste déroulante
     if (sort == "date") { // tri date
         data.sort((a,b) => Date.parse(b.date) - Date.parse(a.date))
     } else if (sort == "popularite"){ // tri popularité

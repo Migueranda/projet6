@@ -9,7 +9,7 @@ function displayModal() {
 document.addEventListener('keydown', (event)=>{
   const keyName = event.key
   if(keyName == 'Escape'){
-    closeModal  ();
+    closeModal();
       return;
   }
 });
@@ -30,10 +30,9 @@ function setModalContent(photographers){
         <h1 id="contactez-moi">Contactez-moi</h1>
         <h2 class="titre_modal-name">${photographers[0].name}</h2>
    </div> 
+   <button id="closemodal" type="button"><nav class="button_text-content">fermer modal</nav>
+   <ion-icon ariaLabel="fermer" name="close-outline" onclick="closeModal()"></ion-icon></button>`  
     
-    <button id="closemodal"><i title="fermer" role="bouton fermer" class="fa-solid fa-xmark" onclick="closeModal()"></i></button>
-    `      
-    // <button id="closemodal"><ion-icon ariaLabel="fermer" name="close-outline"  onclick="closeModal()"></ion-icon></button>
     titre_Modal.innerHTML = html;
 }
  //Seclection des elements du champ input

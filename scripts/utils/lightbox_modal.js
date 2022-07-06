@@ -38,7 +38,7 @@ function displayMediaLightBox(index){
      let chevron_prec_html = ''
      if (index > 0) { 
          index_prec = index - 1
-         chevron_prec_html = `<div class="chevront">
+         chevron_prec_html = `<div class="chevront"">
                                 <span class="chevron-left" id="precedent" onclick="changeSlide(${index_prec})">
                                 <i class="fa-solid fa-chevron-left"></i></span>
                             </div>`
