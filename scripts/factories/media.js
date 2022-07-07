@@ -14,7 +14,7 @@ function mediaFactory(data, type){
             class="media lightbox_select" id="button_play" 
             role="img" /></a>`
         }            
-        const section = document.createElement('div');
+        const section = document.createElement('div');//section pour les media des photographes
         section.className = 'section_media';// ajout d'une class
     let html = multimedia + `<div class="media_caption">
                                 <h3 class="titre_media">${title}</h3> 

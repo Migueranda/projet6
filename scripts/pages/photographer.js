@@ -5,7 +5,7 @@ async function getPhotographer(id_photographer) {
     const data = await fetch(urljson) //ajout await  au fetch pour attendre que la promesse s'execute
     .then((Response) => Response.json())
     .then(data => {
-        // on filtre les donnée en fonction de l'id du photographe
+        //// on filtre les donnée en fonction de l'id du photographe
       data.photographers = data.photographers.filter(photographer => photographer.id == id_photographer)
       data.media = data.media.filter(media => media.photographerId == id_photographer)           
         return data
@@ -16,7 +16,7 @@ async function getPhotographer(id_photographer) {
 }
 
 async function displayData(photographers, media) {
-    // Affichage du Photographe
+    //// Affichage du Photographe
     const photographHeader = document.querySelector(".photograph-header"); 
     // suppression de la carte précédente (si présence)
     if (photographHeader.hasChildNodes()) {
@@ -36,7 +36,7 @@ async function displayData(photographers, media) {
     if (mediaSection.hasChildNodes()) {
         while(mediaSection.firstChild) mediaSection.removeChild(mediaSection.firstChild)
     }
-    // génération de la carte media via la media factory
+    //// génération de la carte media via la media factory
     media.forEach((media) => {
         const mediaModel = mediaFactory(media, "media");
         const userCardDOM = mediaModel.getUserCardDOM();
@@ -44,7 +44,7 @@ async function displayData(photographers, media) {
         mediaSection.appendChild(userCardDOM);
     })
 
-    // affichage "total likes" et "taux journalier(.total_prix)" dans rectangle media
+    //// affichage "total likes" et "taux journalier(.total_prix)" dans rectangle media
     const totalPrix = document.querySelector('div.total_prix');
     totalPrix.innerHTML = `${photographers[0].price}&#8364 / jour`; 
     
@@ -82,8 +82,7 @@ async function init(sort) {
     const getDoneeUrl = (new URL(document.location)).searchParams;    
     let id = getDoneeUrl.get('id');
 
-    console.log(id);
-    // Récupère les datas des photographes
+    //// Récupère les datas des photographes
     const { photographers, media } = await getPhotographer(id);
     console.log(photographers)
     // tri du tableau
@@ -95,9 +94,6 @@ async function init(sort) {
     // gestion pop up modal light box      
     lightBoxModal(global_media);
     setModalContent(photographers);
-    // changeSlide(sens);
-    // global_media = media2   
-    console.log(global_media.length);
 };
 
 var global_media = null

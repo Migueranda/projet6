@@ -7,10 +7,10 @@ function lightBoxModal(media){
             displayMediaLightBox(index);           
         });
 
-        lightBoxElt.addEventListener('touchstart', function(event){ // evenement type click pour afficher modal au click de l'image
-            console.log("coucou2");
+        lightBoxElt.addEventListener('touchstart', function(event){ // evenement type click pour afficher modal au click de la video
             displayLightBoxModal();
-            displayMediaLightBox(index);           
+            displayMediaLightBox(index);   
+                   
         });
     });  
 }
@@ -18,7 +18,6 @@ function lightBoxModal(media){
 // function pour mutualiser les code affichage des chevrons et media dans la lightbox
 
 function displayMediaLightBox(index){
-
     let lightBoxMedia = document.querySelector('div.media_lightbox');   
            
     let multimedia = '';
@@ -79,6 +78,24 @@ document.addEventListener('keydown', (event)=>{
         closeLightBoxModal();
         return;
     }
+    
+    if(keyName == 'Enter'){
+        // gestion click Image/video
+        // event.target est une balise Anchor (a)
+        // il faut donc aller chercher l'élément fils .lightbox_select 
+        // sur lequel j'ai positionné un événement clic via la fonction lightBoxModal
+        const imgLightboxSelect = event.target.querySelector("img.lightbox_select")
+        if(imgLightboxSelect !== null){
+            imgLightboxSelect.click()
+        }
+        // gestion click Heart (likes)
+        const buttonLikes = event.target.querySelector('ion-icon[name="heart"]')
+        if(buttonLikes !== null){
+            buttonLikes.click()
+        }
+
+        return;
+    }   
 });
 
 // affichage de la modal lightbox
@@ -94,7 +111,6 @@ function closeLightBoxModal() {
 }
 //light box modal
 function changeSlide(index){
-    displayMediaLightBox(index);   
-      
+    displayMediaLightBox(index);     
 }
 

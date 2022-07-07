@@ -12,6 +12,7 @@
     }
 
     async function displayData(photographers) {
+        //affichage de la carte du photographe 
         const photographersSection = document.querySelector(".photographer_section");
         photographers.forEach((photographer) => {
             const photographerModel = photographerFactory(photographer);
